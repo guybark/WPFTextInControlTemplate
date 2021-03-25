@@ -1,0 +1,29 @@
+﻿<Window x:Class="WPFTextInControlTemplate.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFTextInControlTemplate"
+        mc:Ignorable="d"
+        Title="TextBlocks in ControlTemplates" Height="450" Width="800">
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <UserControl Style="{StaticResource ResourceKey=UserControlStyleInaccessibleText}" />
+            <UserControl Style="{StaticResource ResourceKey=UserControlStyleAccessibleText}" />
+            <UserControl x:Name="LiveControl" 
+                Style="{StaticResource ResourceKey=UserControlStyleAccessibleLiveText}" />
+        </StackPanel>
+        <Button Grid.Row="1" HorizontalAlignment="Left" Padding="4"
+            Content="Change status" Click="ChangeStatusButton_Click"/>
+        <Button Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" Padding="4"
+            Content="Close" Click="CloseButton_Click"/>
+    </Grid>
+</Window>
