@@ -1,4 +1,4 @@
-**_Barker's Disclaimer_:** I sometimes get stuff wrong. A WPF expert once told a bunch of people that one of my suggestions around accessibility was "especially bad". So please treat everything I say as suspect. But hopefully at least some of the below might be right, at least at the time of writing this, (27th March 2021).
+**_Barker's Disclaimer_:** I sometimes get stuff wrong. A WPF expert once told a bunch of people that one of my suggestions around accessibility was "especially bad". So please treat everything I say as suspect. But hopefully some of what I say below might be right, at least at the time of writing this, (27th March 2021).
 
 The Windows accessibility API is called UI Automation, (UIA). Assistive Technologies such as screen readers use UIA to access information in apps for your customers. A while back I wrote an introduction into UIA, starting at [UI Automation: An Incomplete Guide for UI builders – Part 1](https://www.linkedin.com/pulse/ui-automation-incomplete-guide-builders-part-1-guy-barker). All important text shown in your app must be accessible to all your customers, and as such, the text must be exposed through the Control view of the UIA hierarchy.
 
@@ -14,3 +14,12 @@ By the way, Narrator can move to accessible static text in an app using its "Sca
 * [Narrator gets more accessible with QuickStart](https://www.youtube.com/watch?v=FVj0cfn2ugg)
 * [Accessibility Learning Webinar Series: Narrator 101]( https://www.youtube.com/watch?v=Uhya4f2miJ0)
 * [Complete guide to Narrator](https://support.microsoft.com/en-us/help/22798/windows-10-complete-guide-to-narrator)
+
+The following image shows the Accessibility Insights for Windows tool reporting the UIA hierachy of the demo WPF app. One of the three text strings shown visually in the app is not shown in the UIA representation of the UI.
+![The Accessibility Insights for Windows tool reporting the UIA hierachy of the demo WPF app](ControlTemplateText.png)
+
+The following image shows the Accessibility Insights for Windows tool reporting a UIA LiveRegionChanged event being raised by the demo WPF app. The updated text on the element raising the event is "The text on this live TextBlock has changed."
+![The following image shows the Accessibility Insights for Windows tool reporting a UIA LiveRegionChanged event being raised by the demo WPF app.](ControlTemplateLiveText.png)
+
+For my own take on the Accessibility Insights for Windows tool, please visit [How Accessibility Insights can help you and your customers](https://www.linkedin.com/pulse/how-accessibility-insights-can-help-you-your-customers-guy-barker/).
+
